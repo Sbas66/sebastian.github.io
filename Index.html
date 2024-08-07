@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Instagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            color: #262626;
+        }
+        header {
+            background-color: #405de6;
+            background: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2, h4 {
+            color: #405de6;
+            background: -webkit-linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        footer {
+            background-color: #262626;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .login-container, .contact-container, .increment-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2, .contact-container h2, .increment-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container label, .contact-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .login-container input, .contact-container input, .contact-container textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .login-container button, .contact-container button, .increment-container input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .login-container button:hover, .contact-container button:hover, .increment-container input[type="button"]:hover {
+            background-color: #2678c4;
+        }
+        .increment-container h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Instagram</h1>
+    </header>
+    <main>
+        <div class="login-container">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <label for="username">Nombre de Usuario</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+                <button type="button" onclick="verificar()">Entrar</button>
+            </form>
+        </div>
+        <section style="display: none;" id="mainContent">
+            <section>
+                <h2>¿Qué es Instagram?</h2>
+                <p>Instagram es una red social de fotografía y video que permite a los usuarios compartir momentos de su vida diaria a través de imágenes y videos cortos. Fue lanzada en octubre de 2010 y adquirida por Facebook en 2012.</p>
+                <p>Instagram ofrece una variedad de funciones para conectar a las personas, como los comentarios y los "me gusta" en las publicaciones, la posibilidad de seguir a otros usuarios y descubrir contenido mediante la sección de explorar.</p>
+            </section>
+            <section>
+                <h2>Características Principales</h2>
+                <ul>
+                    <li>Publicación de fotos y videos</li>
+                    <li>Historias que desaparecen en 24 horas</li>
+                    <li>Mensajes directos</li>
+                    <li>IGTV para videos de larga duración</li>
+                    <li>Filtros y herramientas de edición</li>
+                    <li>Explorar para descubrir nuevo contenido</li>
+                    <li>Reels para videos cortos y creativos</li>
+                    <li>Shop para compras dentro de la aplicación</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Popularidad</h2>
+                <p>Instagram cuenta con más de mil millones de usuarios activos mensuales y es una de las plataformas sociales más influyentes del mundo. Es especialmente popular entre jóvenes y creadores de contenido.</p>
+                <p>La plataforma ha influido significativamente en la cultura visual y la manera en que las personas se comunican, comparten y consumen contenido digital.</p>
+            </section>
+            <section class="increment-container">
+                <h4>Botón de Incrementos</h4>
+                <br>
+                <form>
+                    <input type="button" value="Incremento" onclick="incremento()">
+                </form>
+                <script>
+                    let contador = 0;
+                    function incremento() {
+                        contador++;
+                        alert("El número es: " + contador);
+                    }
+                </script>
+            </section>
+            <section class="contact-container">
+                <h2>Contacto</h2>
+                <form id="contactForm">
+                    <label for="contactName">Nombre</label>
+                    <input type="text" id="contactName" name="contactName" required>
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" name="contactEmail" required>
+                    <label for="contactMessage">Mensaje</label>
+                    <textarea id="contactMessage" name="contactMessage" rows="4" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Instagram Inc.</p>
+    </footer>
+    <script>
+        let control = 0;
+        let Contraseña = 'pass';
+
+        function verificar() {
+            let clave = document.getElementById('password').value;
+            if (clave !== Contraseña) {
+                alert('La contraseña es incorrecta');
+            } else {
+                document.querySelector('.login-container').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
