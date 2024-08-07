@@ -5,92 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acerca de Instagram</title>
     <style>
+        /* Estilos generales para el cuerpo del documento */
         body {
             font-family: Arial, sans-serif;
-            background-color: #fafafa;
+            background-color: #fafafa; /* Fondo claro */
             margin: 0;
             padding: 0;
-            color: #262626;
+            color: #262626; /* Color del texto */
         }
+        /* Estilos para el encabezado */
         header {
-            background-color: #405de6;
-            background: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-            color: white;
-            text-align: center;
-            padding: 1em 0;
+            background-color: #405de6; /* Color de fondo del encabezado */
+            background: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); /* Gradiente */
+            color: white; /* Color del texto */
+            text-align: center; /* Texto centrado */
+            padding: 1em 0; /* Espaciado interno */
         }
+        /* Estilos para el área principal */
         main {
-            padding: 20px;
+            padding: 20px; /* Espaciado interno */
         }
+        /* Estilos para las secciones dentro del área principal */
         section {
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Espaciado inferior */
+            padding: 20px; /* Espaciado interno */
+            background-color: #fff; /* Fondo blanco */
+            border: 1px solid #ddd; /* Borde gris claro */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            animation: fadeIn 1s ease-in-out; /* Animación de desvanecimiento */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
         h2, h4 {
-            color: #405de6;
-            background: -webkit-linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #405de6; /* Color de los encabezados */
+            background: -webkit-linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); /* Gradiente */
+            -webkit-background-clip: text; /* Clip del fondo */
+            -webkit-text-fill-color: transparent; /* Relleno de texto transparente */
         }
         footer {
-            background-color: #262626;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            background-color: #262626; /* Fondo oscuro */
+            color: white; /* Color del texto */
+            text-align: center; /* Texto centrado */
+            padding: 1em 0; /* Espaciado interno */
+            position: fixed; /* Posición fija */
+            width: 100%; /* Ancho completo */
+            bottom: 0; /* Posicionado al fondo */
         }
+        /* Estilos para los contenedores de formularios */
         .login-container, .contact-container, .increment-container {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px; /* Ancho máximo */
+            margin: 20px auto; /* Margen automático para centrar */
+            background-color: #fff; /* Fondo blanco */
+            padding: 20px; /* Espaciado interno */
+            border: 1px solid #ddd; /* Borde gris claro */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            opacity: 0; /* Inicialmente invisible */
+            transform: translateY(20px); /* Desplazamiento inicial */
+            animation: slideIn 0.5s forwards; /* Animación de deslizamiento */
         }
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Estilos para los encabezados dentro de los contenedores */
         .login-container h2, .contact-container h2, .increment-container h2 {
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Margen inferior */
         }
+        /* Estilos para las etiquetas de los formularios */
         .login-container label, .contact-container label {
-            display: block;
-            margin-bottom: 5px;
+            display: block; /* Bloque completo */
+            margin-bottom: 5px; /* Margen inferior */
         }
+        /* Estilos para los campos de entrada */
         .login-container input, .contact-container input, .contact-container textarea {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
+            width: calc(100% - 20px); /* Ancho completo menos 20px */
+            padding: 10px; /* Espaciado interno */
+            margin-bottom: 10px; /* Margen inferior */
+            border: 1px solid #ddd; /* Borde gris claro */
+            border-radius: 3px; /* Bordes redondeados */
         }
+        /* Estilos para los botones */
         .login-container button, .contact-container button, .increment-container input[type="button"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #3897f0;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
+            width: 100%; /* Ancho completo */
+            padding: 10px; /* Espaciado interno */
+            background-color: #3897f0; /* Color de fondo */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 3px; /* Bordes redondeados */
+            cursor: pointer; /* Cursor de mano */
         }
+        /* Estilos para los botones en estado hover */
         .login-container button:hover, .contact-container button:hover, .increment-container input[type="button"]:hover {
-            background-color: #2678c4;
+            background-color: #2678c4; /* Cambio de color en hover */
         }
+        /* Estilos específicos para el encabezado del contenedor de incremento */
         .increment-container h4 {
-            text-align: center;
+            text-align: center; /* Texto centrado */
         }
     </style>
 </head>
 <body>
     <header>
+        <!-- Título del encabezado -->
         <h1>Instagram</h1>
     </header>
     <main>
         <div class="login-container">
+            <!-- Formulario de inicio de sesión -->
             <h2>Iniciar Sesión</h2>
             <form id="loginForm">
                 <label for="username">Nombre de Usuario</label>
@@ -101,11 +132,13 @@
             </form>
         </div>
         <section style="display: none;" id="mainContent">
+            <!-- Sección de información sobre Instagram -->
             <section>
                 <h2>¿Qué es Instagram?</h2>
                 <p>Instagram es una red social de fotografía y video que permite a los usuarios compartir momentos de su vida diaria a través de imágenes y videos cortos. Fue lanzada en octubre de 2010 y adquirida por Facebook en 2012.</p>
                 <p>Instagram ofrece una variedad de funciones para conectar a las personas, como los comentarios y los "me gusta" en las publicaciones, la posibilidad de seguir a otros usuarios y descubrir contenido mediante la sección de explorar.</p>
             </section>
+            <!-- Sección de características principales -->
             <section>
                 <h2>Características Principales</h2>
                 <ul>
@@ -119,11 +152,13 @@
                     <li>Shop para compras dentro de la aplicación</li>
                 </ul>
             </section>
+            <!-- Sección sobre la popularidad de Instagram -->
             <section>
                 <h2>Popularidad</h2>
                 <p>Instagram cuenta con más de mil millones de usuarios activos mensuales y es una de las plataformas sociales más influyentes del mundo. Es especialmente popular entre jóvenes y creadores de contenido.</p>
                 <p>La plataforma ha influido significativamente en la cultura visual y la manera en que las personas se comunican, comparten y consumen contenido digital.</p>
             </section>
+            <!-- Sección del botón de incremento -->
             <section class="increment-container">
                 <h4>Botón de Incrementos</h4>
                 <br>
@@ -138,6 +173,7 @@
                     }
                 </script>
             </section>
+            <!-- Sección del formulario de contacto -->
             <section class="contact-container">
                 <h2>Contacto</h2>
                 <form id="contactForm">
@@ -153,17 +189,21 @@
         </section>
     </main>
     <footer>
+        <!-- Pie de página -->
         <p>&copy; 2024 Instagram Inc.</p>
     </footer>
     <script>
-        let control = 0;
-        let Contraseña = 'pass';
+        let control = 0; // Inicializa el control para la verificación de la contraseña
+        let Contraseña = 'pass'; // Define la contraseña correcta
 
         function verificar() {
+            // Obtiene el valor del campo de contraseña
             let clave = document.getElementById('password').value;
+            // Verifica si la contraseña es incorrecta
             if (clave !== Contraseña) {
-                alert('La contraseña es incorrecta');
+                alert('La contraseña es incorrecta'); // Muestra un mensaje de alerta
             } else {
+                // Oculta el contenedor de inicio de sesión y muestra el contenido principal
                 document.querySelector('.login-container').style.display = 'none';
                 document.getElementById('mainContent').style.display = 'block';
             }
